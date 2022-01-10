@@ -135,8 +135,7 @@ void loop() {
   //the equaltion is calculated by hand while there is a 400mV level up and 0mV corresponds to PH 14 and 800 mV corresponds to PH 0.
 
   float v = analogRead(A0);
-  float Ph = map(v, 0, 800, 14.00, 0.00);
-  float PH = -0.0175 * v + 14;
+  float PH = -0.03461518 * v + 23.6153846;
   Serial.println(v);
 
   Serial.println(PH);
