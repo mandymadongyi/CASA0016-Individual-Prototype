@@ -49,8 +49,7 @@ Water Level = h – d (meters)
 [Connect PH sensor to Arduino board](https://github.com/mandymadongyi/CASA0016-Individual-Prototype/blob/main/References/User Manual PH Sensor.pdf) (CASA0016-Individual-Prototype/User Manual PH Sensor.pdf at main · mandymadongyi/CASA0016-Individual-Prototype, 2022) to collect real-time voltage data at Arduino’s analogue pin, then convert the analogue signal into PH value. According to the millivolts to pH formula discovered by Dr Jerry Tennant, PH number follows a simple linear relationship with the millivolts in the liquid, where the full range of pH scale goes from a low acidic pH 0 = +400 mV to a high alkaline pH 14 = -400 mV level. (pH Voltage | Acidity, Alkalinity equals Volts calculator, 2022)
 
  
-
-![Table  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
+<img width="84" alt="image" src="https://user-images.githubusercontent.com/91919718/164994163-07c5dec8-10af-4cee-8393-b63c818a9c7b.png">
 
  
 
@@ -139,11 +138,11 @@ After collecting data, [Connect the device to Wi-Fi and MQTT](https://docs.ardui
 
 The prototype is based on one Arduino microcontroller, three sensors and one LCD connected in parallel. The schematic of the circuit is shown below.
 
-![Diagram  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.jpg)
+![image](https://user-images.githubusercontent.com/91919718/164994177-b23b9721-23c4-414f-90d2-6a53267c6a90.jpeg)
 
 Figure 2. Schematic of the circuit
 
-![img](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.jpg)
+![image](https://user-images.githubusercontent.com/91919718/164994180-eb114353-d81d-4107-83eb-296ae62aa7f6.jpeg)
 
 Figure 3. Real wiring
 
@@ -155,11 +154,11 @@ The DS1820B temperature and ultrasonic sensors are already calibrated to fetch t
 
 Much effort has been put into calibrating the PH sensor since the analogue signal generated from the sensor probe is too small, and the voltage for alkaline solutions are negative numbers, which are not able to be read by Arduino analogue pin and converted into solid PH value. To get meaningful readings, a PCB board is used to pre-process data before the probe sending signals to the analogue pin and Arduino by doing: 1. [Level shift the detected voltage ](https://daycounter.com/Circuits/OpAmp-Level-Shifter/OpAmp-Level-Shifter.phtml) (Non-Inverting Op-Amp Level Shifter - Daycounter, 2022) so that all readings are positive numbers and 2. amplify the shifted signal by three times. Then, the linear function between PH and mV will be defined by calibrating with various acid and alkaline solutions.
 
-![A picture containing text, indoor  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.jpg)
+![image](https://user-images.githubusercontent.com/91919718/164994184-41838e67-84ac-4fd0-a069-580a06207f39.jpeg)
 
 Figure 4. Calibrate PH sensor with vinegar, coke, pure water, coffee, liquid soap and laundry liquid
 
-![A picture containing person, indoor  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.jpg)
+![image](https://user-images.githubusercontent.com/91919718/164994188-f467a7d5-c287-43ec-9e7a-a27cde66bec8.jpeg)
 
 Figure 5. The alkaline solution (liquid soap) outcomes a small and negative value (-0.7 mV) when using a multimeter to measure the voltage at the sensor probe
 
@@ -193,7 +192,7 @@ Vout = 3 * ( Vin + 0.49 * Rx)      (Equation 3)
 
 A 50kΩ potentiometer is used in this project.  
 
-![Diagram, schematic  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.jpg)
+![image](https://user-images.githubusercontent.com/91919718/164994198-e707703e-81ea-414b-a6ca-46fb63e36a30.jpeg)
 
 Figure 6. PCB board circuit for PH sensor (CASA0016-Individual-Prototype/User Manual PH Sensor.pdf at main · mandymadongyi/CASA0016-Individual-Prototype, 2022)
 
@@ -217,7 +216,7 @@ The lab also observed that PH 10 liquid outcomes 382mV approximately fit the pre
 
  
 
-![Chart, line chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
+<img width="378" alt="image" src="https://user-images.githubusercontent.com/91919718/164994206-a45c077b-86ce-4032-bd47-0dd1760c76b4.png">
 
 Figure 7. Fitting equation and a line graph of the linear relation between PH and voltage
 
@@ -225,17 +224,17 @@ Figure 7. Fitting equation and a line graph of the linear relation between PH an
 
 [Here](https://github.com/mandymadongyi/CASA0016-Individual-Prototype/blob/main/Code/final_to_upload/final_to_upload.ino) is the link to a basic standalone Arduino sketch that monitors and visualises the water features, incorporating the earlier calibration. In addition, it can be reused by adding more sensors like water turbidity or changing transmit protocols, including Bluetooth/LoRa/HTTP, as extensions. 
 
-![Graphical user interface, text, application, email  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/91919718/164994214-acc488b8-799a-4fe6-8994-fe9a5ea25d72.png">
 
 Figure 8. Calculating water level and temperature, PH value and print on LCD
 
-![Graphical user interface, text, application  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)
+<img width="286" alt="image" src="https://user-images.githubusercontent.com/91919718/164994226-c40ca05d-1eba-4687-bfa6-42cbe4e06de2.png">
 
 Figure 9. Connecting and Sending data to MQTT
 
 
 
-![img](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)
+<img width="385" alt="image" src="https://user-images.githubusercontent.com/91919718/164994237-6e71af07-8973-4631-82cd-dee559bf46ff.png">
 
 Figure 10. Telegraf configuration in influx DB in raspberry pi for Grafana display
 
@@ -245,13 +244,13 @@ Figure 10. Telegraf configuration in influx DB in raspberry pi for Grafana displ
 
 An enclosure model is designed using Fusion 360, and 3D printed out for the system. On the bottom, front and top surfaces, there are holes for the ultrasonic sensor, LCD screen, sensor probes and power bank USB cable respectively. There are two holes on the side of the box for transport. 
 
-![Diagram, engineering drawing  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)
+<img width="367" alt="image" src="https://user-images.githubusercontent.com/91919718/164994246-187bd04e-3d09-4d42-bf14-bb1a2de1adbd.png">
 
 Figure 11. 3D Model of the enclosure
 
 
 
-![A picture containing indoor, wall, office  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.png)
+![image](https://user-images.githubusercontent.com/91919718/164994250-a6357d15-c661-458b-8c88-feedaa86a231.jpeg)
 
  
 
@@ -261,11 +260,11 @@ Figure 12. 3D printed box with feet made from recycled materials (cupboard and p
 
 [Here](https://youtu.be/6DnR-BQpXQE) is a link to a video demonstrating how the system works. 
 
-![A picture containing text, indoor, desk  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image015.jpg)
+![image](https://user-images.githubusercontent.com/91919718/164994257-658fe52f-ae0d-4428-9fdd-ac5422f09556.jpeg)
 
 Figure 13. Final prototype
 
-![img](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image016.png)
+<img width="317" alt="image" src="https://user-images.githubusercontent.com/91919718/164994259-3eb0084c-6bf7-4aa1-a289-add8fd261987.png">
 
 Figure 14. Grafana Visualisation
 
@@ -279,7 +278,7 @@ Overall, this device works well with remotely tracking and visualising water lev
 
 ## Challenges and Key Learnings
 
-![Text  Description automatically generated with medium confidence](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image017.png)
+<img width="381" alt="image" src="https://user-images.githubusercontent.com/91919718/164994262-1fd89033-85bd-4b74-83f1-544f5efbda71.png">
 
 Figure 15. Summary of key challenges and solutions
 
@@ -295,7 +294,15 @@ The power budget is an essential concession of a self-managing and long-time sur
 
 Besides, a PIR motion sensor is useful for controlling the LCD screen, only turning it on when someone is around. Lora and large capacity batteries are also helpful to ensure longer endurance time.
 
-​        ![A close-up of a control panel  Description automatically generated with low confidence](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image019.png)![A close-up of a control panel  Description automatically generated with low confidence](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image021.png)![A picture containing text, indoor, different  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image023.png)![A picture containing text, indoor, game  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image025.png) 
+![image](https://user-images.githubusercontent.com/91919718/164994269-80a80a45-571c-4432-99b4-3c397be8c90e.jpeg)
+
+![image](https://user-images.githubusercontent.com/91919718/164994273-5fc2c0da-04e2-4712-bc45-9eb6d6613306.jpeg)
+
+![image](https://user-images.githubusercontent.com/91919718/164994278-125b4085-9df9-408d-aa9b-caa54899782e.jpeg)
+
+![image](https://user-images.githubusercontent.com/91919718/164994283-4e1eeace-05b7-45e9-b0af-428f52941122.jpeg)
+
+
 
 Figure 16. Measuring current when sending MQTT data
 
