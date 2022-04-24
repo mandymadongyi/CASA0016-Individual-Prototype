@@ -6,8 +6,6 @@ Dongyi Ma
 
 January 2022
 
-GitHub Repo Path: https://github.com/mandymadongyi/CASA0016-Individual-Prototype
-
  
 
 #  
